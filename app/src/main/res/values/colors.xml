@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="hint_text_color">#CACACA</color>
+    <color name="button_normal_background">#069756</color>
+    <color name="button_pressed_background">#206747</color>
+    <color name="simple_button_text_color_normal">#6E6E6E</color>
+    <color name="simple_button_text_color_pressed">@color/black</color>
+    <color name="profile_button_text_color_pressed">#0D47A1</color>
+    <color name="profile_button_text_color_normal">#2196F3</color>
+
+</resources>
