@@ -72,7 +72,6 @@
             android:paddingLeft="@dimen/login_field_padding_left"
             android:paddingTop="@dimen/login_field_padding_top_bottom"
             android:singleLine="true"
-            android:text="password"
             android:textColor="@color/black"
             android:textColorHint="@color/hint_text_color"
             android:textSize="@dimen/login_field_text_size" />
