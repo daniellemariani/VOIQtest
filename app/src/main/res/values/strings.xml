@@ -11,6 +11,7 @@
     <string name="button_suggest_create_account">Not an Agent? <u>Apply Here</u></string>
     <string name="button_profile"><u>Developed by Danielle Mariani</u></string>
     <string name="not_available">This functionality is not available</string>
+    <string name="logging_in">Logging in...</string>
 
     <!-- create account -->
     <string name="register">Register</string>
@@ -27,6 +28,7 @@
     <string name="city">City</string>
     <string name="device">Device: Android</string>
     <string name="mandatoy_mark">*</string>
+    <string name="creating_account">Creating account...</string>
 
     <!-- errors -->
     <string name="invalid_login_input">Invalid email and password</string>

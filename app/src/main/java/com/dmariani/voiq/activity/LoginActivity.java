@@ -1,5 +1,6 @@
 package com.dmariani.voiq.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dmariani.voiq.R;
+import com.dmariani.voiq.model.ErrorResponse;
+import com.dmariani.voiq.model.User;
+import com.dmariani.voiq.request.RequestListener;
+import com.dmariani.voiq.request.RequestManager;
 import com.dmariani.voiq.util.StringUtils;
 
 /**
@@ -19,7 +24,7 @@ import com.dmariani.voiq.util.StringUtils;
  *
  * @author Danielle Mariani
  */
-public class LoginActivity extends AppCompatActivity implements OnClickListener {
+public class LoginActivity extends AppCompatActivity implements OnClickListener, RequestListener<User> {
 
     // Views
     private EditText editTextEmail;
@@ -28,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
     private TextView buttonCreateAccount;
     private TextView buttonForgotPassword;
     private TextView buttonProfile;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +79,11 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         String password = editTextPassword.getText().toString();
 
         if (validateInput(email, password)) {
-            // TODO: Login
-            Toast.makeText(this, R.string.button_login, Toast.LENGTH_LONG).show();
+            dialog = new ProgressDialog(this);
+            dialog.setMessage(getString(R.string.logging_in));
+            dialog.show();
+
+            RequestManager.loginRequest(this, email, password, this);
         }
 
     }
@@ -111,5 +120,20 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         String profileUrl = getString(R.string.profile);
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(profileUrl));
         startActivity(browserIntent);
+    }
+
+    @Override
+    public void onSuccess(User response) {
+        Toast.makeText(this, "Login Success" + response.getEmail(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFailure(ErrorResponse errorResponse) {
+        Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFinish() {
+        dialog.dismiss();
     }
 }

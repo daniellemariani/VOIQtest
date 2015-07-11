@@ -1,8 +1,7 @@
 package com.dmariani.voiq.activity;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
-import android.net.Uri;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -12,11 +11,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dmariani.voiq.R;
+import com.dmariani.voiq.model.*;
+import com.dmariani.voiq.request.RequestListener;
+import com.dmariani.voiq.request.RequestManager;
 import com.dmariani.voiq.util.StringUtils;
 
 import java.util.Calendar;
@@ -26,7 +27,7 @@ import java.util.Calendar;
  *
  * @author Danielle Mariani
  */
-public class CreateAccountActivity extends AppCompatActivity implements OnClickListener, DatePickerDialog.OnDateSetListener {
+public class CreateAccountActivity extends AppCompatActivity implements OnClickListener, DatePickerDialog.OnDateSetListener, RequestListener<User> {
 
     // Views
     private EditText editTextFirstName;
@@ -38,8 +39,10 @@ public class CreateAccountActivity extends AppCompatActivity implements OnClickL
     private EditText editTextZipCode;
     private TextView buttonBirthday;
     private Button buttonCreateAccount;
+    private ProgressDialog dialog;
 
     // Attrs
+    private User user;
     private Calendar currentDate;
 
     @Override
@@ -93,8 +96,10 @@ public class CreateAccountActivity extends AppCompatActivity implements OnClickL
 
     private void onClickCreateAccountButton() {
         if (validateInput()) {
-            // TODO: Create Account
-            Toast.makeText(this, R.string.button_create_account, Toast.LENGTH_LONG).show();
+            dialog = new ProgressDialog(this);
+            dialog.setMessage(getString(R.string.creating_account));
+            dialog.show();
+            RequestManager.createAccountRequest(this, user, this);
         }
 
     }
@@ -152,6 +157,15 @@ public class CreateAccountActivity extends AppCompatActivity implements OnClickL
             return false;
         }
 
+        user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setConfirmationPassword(confirmationPassword);
+        user.setBirthday(birthday);
+        user.setPhone(phone);
+        user.setZipCode(zipCode);
         return true;
     }
 
@@ -177,5 +191,20 @@ public class CreateAccountActivity extends AppCompatActivity implements OnClickL
 
         final String format = "yyyy-MM-dd";
         buttonBirthday.setText(StringUtils.dateToString(currentDate, format));
+    }
+
+    @Override
+    public void onSuccess(User response) {
+        Toast.makeText(this, "Create Account: Successful", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFailure(ErrorResponse errorResponse) {
+        Toast.makeText(this, "Create Account: Failed", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFinish() {
+        dialog.dismiss();
     }
 }
