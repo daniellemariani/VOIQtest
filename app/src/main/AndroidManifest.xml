@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.CreateAccountActivity"
+            android:label="@string/register"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
     </application>
 
 </manifest>

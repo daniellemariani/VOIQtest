@@ -99,6 +99,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
     }
 
     private void onClickCreateAccount() {
+        Intent intent = new Intent(this, CreateAccountActivity.class);
+        startActivity(intent);
     }
 
     private void onClickForgotPasswordButton() {

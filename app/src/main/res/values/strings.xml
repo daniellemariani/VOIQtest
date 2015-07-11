@@ -6,17 +6,37 @@
     <string name="profile">http://ve.linkedin.com/pub/danielle-mariani/31/150/b51/</string>
 
     <!-- login -->
-    <string name="email_hint">Email</string>
-    <string name="email_password">Password</string>
     <string name="button_login">Login</string>
     <string name="button_forgot_password">Forgot your password?</string>
-    <string name="button_create_account">Not an Agent? <u>Apply Here</u></string>
+    <string name="button_suggest_create_account">Not an Agent? <u>Apply Here</u></string>
     <string name="button_profile"><u>Developed by Danielle Mariani</u></string>
     <string name="not_available">This functionality is not available</string>
 
+    <!-- create account -->
+    <string name="register">Register</string>
+    <string name="button_create_account">Create Account</string>
+    <string name="basic_information_title">Basic Information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="password_confirmation">Confirmation Password</string>
+    <string name="date_of_birth">Birth Date</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="phone">Phone</string>
+    <string name="city">City</string>
+    <string name="device">Device: Android</string>
+    <string name="mandatoy_mark">*</string>
+
     <!-- errors -->
     <string name="invalid_login_input">Invalid email and password</string>
+    <string name="invalid_create_account_input">Invalid fields</string>
+    <string name="invalid_first_name_input">Invalid First name</string>
+    <string name="invalid_last_name_input">Invalid Last name</string>
     <string name="invalid_email_input">Invalid email</string>
     <string name="invalid_password_input">Invalid password. Remember it must contain at least 6 chars and max 20</string>
+    <string name="invalid_confirmation_password_input">Confirmation password does not match</string>
+    <string name="invalid_zip_code_input">Invalid zip code</string>
+    <string name="invalid_phone_input">Invalid phone</string>
 
 </resources>

@@ -1,0 +1,329 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/login_activity_padding">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textview_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="30dp"
+            android:text="@string/basic_information_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_title_text_size" />
+
+        <TextView
+            android:id="@+id/textview_first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textview_info_title"
+            android:layout_marginBottom="5dp"
+            android:text="@string/first_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_info_title"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/textview_first_name"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <EditText
+            android:id="@+id/edittext_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_first_name"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:ems="10"
+            android:hint="@string/first_name"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/login_field_text_size" />
+
+        <TextView
+            android:id="@+id/textview_last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_first_name"
+            android:text="@string/last_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_first_name"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/textview_last_name"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <EditText
+            android:id="@+id/edittext_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_last_name"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:ems="10"
+            android:hint="@string/last_name"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/login_field_text_size" />
+
+        <TextView
+            android:id="@+id/textview_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_last_name"
+            android:text="@string/email"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_last_name"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/textview_email"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <EditText
+            android:id="@+id/edittext_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_email"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:ems="10"
+            android:hint="@string/email"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/login_field_text_size" />
+
+        <TextView
+            android:id="@+id/textview_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_email"
+            android:text="@string/password"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_email"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/textview_password"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_password"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/login_field_text_size" />
+
+        <TextView
+            android:id="@+id/textview_password_confirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_password"
+            android:text="@string/password_confirmation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_password"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/textview_password_confirmation"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <EditText
+            android:id="@+id/edittext_password_confirmation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_password_confirmation"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:ems="10"
+            android:hint="@string/password_confirmation"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/login_field_text_size" />
+
+        <TextView
+            android:id="@+id/textview_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_password_confirmation"
+            android:text="@string/date_of_birth"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_email"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/textview_birthday"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+
+        <TextView
+            android:id="@+id/edittext_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_birthday"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:clickable="true"
+            android:hint="@string/date_of_birth"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:id="@+id/textview_zip_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_birthday"
+            android:text="@string/zip_code"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_birthday"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/textview_zip_code"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <EditText
+            android:id="@+id/edittext_zip_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_zip_code"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:ems="10"
+            android:hint="@string/zip_code"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/login_field_text_size" />
+
+        <TextView
+            android:id="@+id/textview_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_zip_code"
+            android:text="@string/phone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_zip_code"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/textview_phone"
+            android:text="@string/mandatoy_mark"
+            android:textColor="@color/red"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <EditText
+            android:id="@+id/edittext_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_phone"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/selector_login_edittext_background"
+            android:ems="10"
+            android:hint="@string/phone"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="@dimen/login_field_text_size" />
+
+
+        <TextView
+            android:id="@+id/textview_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edittext_phone"
+            android:layout_marginRight="10dp"
+            android:text="@string/device"
+            android:textColor="@color/black"
+            android:textSize="@dimen/create_account_field_title_text_size" />
+
+        <Button
+            android:id="@+id/button_create_account"
+            android:layout_width="@dimen/login_button_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/textview_device"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/login_button_margin_bottom"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_button_background"
+            android:text="@string/button_create_account"
+            android:textColor="@color/selector_button_text_color" />
+
+    </RelativeLayout>
+
+
+</ScrollView>

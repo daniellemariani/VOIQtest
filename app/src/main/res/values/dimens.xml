@@ -16,4 +16,9 @@
     <dimen name="login_simple_button_text_size">15sp</dimen>
     <dimen name="login_simple_button_margin_top">10dp</dimen>
 
+    <!-- create account -->
+    <dimen name="create_account_title_text_size">24sp</dimen>
+    <dimen name="create_account_field_title_text_size">16sp</dimen>
+    <dimen name="create_account_field_text_size">16sp</dimen>
+
 </resources>
